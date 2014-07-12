@@ -1,15 +1,57 @@
-# Text Line Iterator
+package us.bpsm.textlineiterable;
 
-An easy way to iterate over all lines in a source of text while using memory proportional to the length of the longest line.
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
+import com.google.common.io.Closer;
+import org.junit.Test;
 
-## License
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
-Text Line Iterator is relased under the
-[Eclipse Public License - v 1.0](http://www.eclipse.org/legal/epl-v10.html).
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-## Usage
+public class LineIterableTest {
 
-```java
+    static int count(Iterable<?> os) {
+        int n = 0;
+        for (Object ignored : os) {
+            n++;
+        }
+        return n;
+    }
+
+    @Test
+    public void emptyContainsNoLines() {
+        assertFalse(new TextLineIterable("").iterator().hasNext());
+    }
+
+    @Test
+    public void lastEolCanBeMissing() {
+        assertEquals(1, count(new TextLineIterable("one\n")));
+        assertEquals(1, count(new TextLineIterable("one")));
+        assertEquals(1, count(new TextLineIterable("\n")));
+        assertEquals("", new TextLineIterable("\n").iterator().next());
+    }
+
+    @Test
+    public void variousEolStylesSupported() {
+        Iterator<String> li = new TextLineIterable("one\rtwo\r\nthree\nfour").iterator();
+        assertEquals("one", li.next());
+        assertEquals("two", li.next());
+        assertEquals("three", li.next());
+        assertEquals("four", li.next());
+        assertFalse(li.hasNext());
+    }
+
+    private File someFile() {
+        return new File(getClass().getResource("example.txt").getFile());
+    }
+
     @Test
     public void usageExample() throws IOException {
         final Charset utf8 = Charset.forName("UTF-8");
@@ -62,8 +104,5 @@ Text Line Iterator is relased under the
             closer.close();
         }
     }
-```
 
-## Dependencies
-
-This code requires a recent version of [Google Guava](https://code.google.com/p/guava-libraries/). The included pom.xml specifies version 17.0 though it may work with older versions as well.
+}
