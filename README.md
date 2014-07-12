@@ -2,6 +2,22 @@
 
 An easy way to iterate over all lines in a source of text while using memory proportional to the length of the longest line.
 
+## Installation
+
+This is a Maven project with the following coordinates:
+
+```xml
+<dependency>
+    <groupId>us.bpsm</groupId>
+    <artifactId>text-line-iterator</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+It is available through the OSS Sonatype Releases repository:
+
+    https://oss.sonatype.org/content/repositories/releases
+
 ## License
 
 Text Line Iterator is relased under the
