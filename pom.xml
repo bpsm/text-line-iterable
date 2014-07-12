@@ -11,7 +11,7 @@
 
   <groupId>us.bpsm</groupId>
   <artifactId>text-line-iterable</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>master-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Text Line Iterable</name>
