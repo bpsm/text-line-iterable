@@ -14,9 +14,9 @@ This is a Maven project with the following coordinates:
 </dependency>
 ```
 
-It is available through the OSS Sonatype Releases repository:
+It is available through the repositories [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22text-line-iterable%22) and [OSS Sonatype Releases](https://oss.sonatype.org/content/repositories/releases).
 
-    https://oss.sonatype.org/content/repositories/releases
+    
 
 ## License
 
