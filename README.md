@@ -14,9 +14,10 @@ This is a Maven project with the following coordinates:
 </dependency>
 ```
 
-It is available through the repositories [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22text-line-iterable%22) and [OSS Sonatype Releases](https://oss.sonatype.org/content/repositories/releases).
+It is available through the repositories [Maven Central][] and [OSS Sonatype Releases][].
 
-    
+[Maven Central]: <http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22us.bpsm%22%20AND%20a%3A%22text-line-iterable%22>
+[OSS Sonatype Releases]: https://oss.sonatype.org/content/repositories/releases
 
 ## License
 
@@ -82,4 +83,6 @@ Text Line Iterator is relased under the
 
 ## Dependencies
 
-This code requires a recent version of [Google Guava](https://code.google.com/p/guava-libraries/). The included pom.xml specifies version 17.0 though it may work with older versions as well.
+This code requires a recent version of [Google Guava][guava]. The included pom.xml specifies version 17.0 though it may work with older versions as well.
+
+[guava]: https://code.google.com/p/guava-libraries/
