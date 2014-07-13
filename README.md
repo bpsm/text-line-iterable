@@ -9,7 +9,7 @@ This is a Maven project with the following coordinates:
 ```xml
 <dependency>
     <groupId>us.bpsm</groupId>
-    <artifactId>text-line-iterator</artifactId>
+    <artifactId>text-line-iterable</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
